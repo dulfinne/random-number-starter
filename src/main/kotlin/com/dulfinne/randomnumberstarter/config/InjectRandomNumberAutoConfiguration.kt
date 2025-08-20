@@ -16,9 +16,11 @@ import org.springframework.context.annotation.Configuration
 class InjectRandomNumberAutoConfiguration {
     private val log = LoggerFactory.getLogger(InjectRandomNumberAutoConfiguration::class.java)
 
-    @Bean
-    fun injectRandomIntAnnotationBeanPostProcessor(): InjectRandomIntAnnotationBeanPostProcessor =
-        InjectRandomIntAnnotationBeanPostProcessor()
+    companion object {
+        @Bean
+        fun injectRandomIntAnnotationBeanPostProcessor(): InjectRandomIntAnnotationBeanPostProcessor =
+            InjectRandomIntAnnotationBeanPostProcessor()
+    }
 
     @PostConstruct
     fun init() {
