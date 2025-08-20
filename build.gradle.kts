@@ -44,13 +44,3 @@ tasks.jar {
 tasks.withType<Test> {
     useJUnitPlatform()
 }
-
-//tasks.register<Copy>("copySpringMetadata") {
-//    from("$buildDir/classes/kotlin/main/META-INF/spring-configuration-metadata.json")
-//    into("$buildDir/resources/main/META-INF")
-//    include("spring-configuration-metadata.json")
-//}
-//
-//tasks.named("processResources") {
-//    dependsOn("copySpringMetadata")
-//}
