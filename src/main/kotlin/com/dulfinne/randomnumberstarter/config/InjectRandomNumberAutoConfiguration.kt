@@ -17,8 +17,7 @@ class InjectRandomNumberAutoConfiguration {
     companion object : KLogging()
 
     @Bean
-    fun injectRandomIntAnnotationBeanPostProcessor(): InjectRandomIntAnnotationBeanPostProcessor =
-        InjectRandomIntAnnotationBeanPostProcessor()
+    fun injectRandomIntAnnotationBeanPostProcessor() = InjectRandomIntAnnotationBeanPostProcessor()
 
     @PostConstruct
     fun init() {
