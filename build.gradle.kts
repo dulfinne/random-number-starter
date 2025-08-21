@@ -20,9 +20,12 @@ repositories {
     mavenCentral()
 }
 
+val loggingVersion = "3.0.5"
+
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
+    implementation("io.github.microutils:kotlin-logging-jvm:$loggingVersion")
     kapt("org.springframework.boot:spring-boot-configuration-processor")
 }
 
