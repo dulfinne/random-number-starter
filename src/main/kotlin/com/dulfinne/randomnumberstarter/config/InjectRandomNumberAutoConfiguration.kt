@@ -13,11 +13,11 @@ import org.springframework.context.annotation.Configuration
 @EnableConfigurationProperties(InjectRandomNumberProperties::class)
 @ConditionalOnClass(InjectRandomNumberProperties::class)
 @ConditionalOnProperty(prefix = "app.common.random-number", name = ["enabled"], havingValue = "true")
-class InjectRandomNumberAutoConfiguration {
+class InjectRandomNumberAutoConfiguration(private val properties: InjectRandomNumberProperties) {
     companion object : KLogging()
 
     @Bean
-    fun injectRandomIntAnnotationBeanPostProcessor() = InjectRandomIntAnnotationBeanPostProcessor()
+    fun injectRandomIntAnnotationBeanPostProcessor() = InjectRandomIntAnnotationBeanPostProcessor(properties)
 
     @PostConstruct
     fun init() {
